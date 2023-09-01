@@ -1,6 +1,11 @@
 
+
 resource "local_file" "name_resource" {
-  content="${var.name} \n ${var.age}\n ${var.company}"
+  content=var.name
   filename = var.filename
+  file_permission = var.permission
   
 }
+
+
+

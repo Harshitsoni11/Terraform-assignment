@@ -2,23 +2,22 @@
 variable "name" {
   type= string
   description = "Name of the Student"
-
-
+  
+  validation {
+    condition     = length(var.name) > 4 
+    error_message = "length should be greater than four"
+  }
 }
 
-variable "age" {
-  description = "Age of the person"
-  type        = number
-
-}
-
-variable "company" {
-  description = "Company Name"
-  type        = string
-}
 
 variable "filename" {
   description = "name of the file"
   type        = string
+  default = "file.txt"
+}
+
+variable "permission" {
+  description = "permisiions"
+  default = "0777"
   
 }
